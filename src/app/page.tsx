@@ -8,6 +8,7 @@ export default function Home() {
         <SectionHeading
           eyebrow="Portfolio / visual foundation"
           heading="A quiet interface for thoughtful engineering."
+          level="h1"
           description="The portfolio is being built incrementally, beginning with an accessible, motion-safe technical visual system."
         />
       </Section>
