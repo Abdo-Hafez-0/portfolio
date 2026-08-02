@@ -1,8 +1,16 @@
+import { Section } from "@/components/ui/section";
+import { SectionHeading } from "@/components/ui/section-heading";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Portfolio foundation</h1>
-      <p>The portfolio interface will be built incrementally.</p>
+    <main className="min-h-screen">
+      <Section>
+        <SectionHeading
+          eyebrow="Portfolio / visual foundation"
+          heading="A quiet interface for thoughtful engineering."
+          description="The portfolio is being built incrementally, beginning with an accessible, motion-safe technical visual system."
+        />
+      </Section>
     </main>
   );
 }
