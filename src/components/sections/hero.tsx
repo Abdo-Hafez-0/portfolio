@@ -59,6 +59,13 @@ export function Hero() {
             >
               View GitHub <ArrowUpRight />
             </LinkButton>
+            <LinkButton
+              href="/Abdulrahman_Hafez_Hasan_CV_2026.pdf"
+              download="Abdulrahman_Hafez_Hasan_CV_2026.pdf"
+              variant="secondary"
+            >
+              Download CV
+            </LinkButton>
           </div>
 
           <nav aria-label="Professional links" className="mt-11 flex gap-5">

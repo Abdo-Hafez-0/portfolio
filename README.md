@@ -51,3 +51,4 @@ This project was created with the assistance of an AI coding agent powered by **
 - Design guidance: `DESIGN.md`
 - Portfolio content: `PORTFOLIO_CONTENT.md`
 - Architecture and deployment decisions: `docs/architecture.md`
+

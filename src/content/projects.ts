@@ -4,6 +4,7 @@ export type Project = {
   description: string;
   problemsSolved: string[];
   technologies: string[];
+  link: string;
 };
 
 export const projects: Project[] = [
@@ -30,6 +31,7 @@ export const projects: Project[] = [
       "JWT Authentication",
       "SignalR",
     ],
+    link: "https://github.com/Abdulrahman-A0/TribeUp",
   },
   {
     name: "Honey E-Commerce",
@@ -50,6 +52,7 @@ export const projects: Project[] = [
       "SQL Server",
       "Razor Views",
     ],
+    link: "https://github.com/Abdo-Hafez-0/Honey-E-Commerce",
   },
   {
     name: "E-Learning Platform",
@@ -68,6 +71,7 @@ export const projects: Project[] = [
       "SQL Server",
       "Razor Views",
     ],
+    link: "https://github.com/Abdo-Hafez-0/ELearning-Platform",
   },
   {
     name: "GameGear Store",
@@ -81,5 +85,46 @@ export const projects: Project[] = [
       "Backend integration with the frontend.",
     ],
     technologies: ["Node.js", "Express.js", "React", "JavaScript"],
+    link: "https://github.com/Abdo-Hafez-0/gamegear-store",
+  },
+] as const;
+
+export const universityProjects: Project[] = [
+  {
+    name: "Amazon Reviews Big Data Analytics System",
+    description:
+      "A MongoDB-based big data analytics system built on the Amazon Reviews dataset containing millions of review records. Performed data analysis and sentiment-oriented exploration on sampled datasets to improve performance and testing efficiency.",
+    problemsSolved: [
+      "Processed millions of review records with MongoDB.",
+      "Performed data analysis and sentiment-oriented exploration.",
+      "Sampled large datasets to improve performance and testing efficiency.",
+    ],
+    technologies: ["MongoDB", "Big Data", "Data Analysis"],
+    link: "https://github.com/Abdo-Hafez-0/ecommerce-recommendation-bigdata",
+  },
+  {
+    name: "Distributed Database System in Go",
+    description:
+      "A distributed database system built with Go using a master-slave architecture and HTTP-based node communication. Implements data replication, distributed CRUD operations, and dynamic database/table management across multiple nodes.",
+    problemsSolved: [
+      "Implemented data replication across distributed nodes.",
+      "Built distributed CRUD operations and dynamic database/table management.",
+      "Designed basic fault-tolerance mechanisms.",
+      "Integrated MySQL databases for each distributed node.",
+    ],
+    technologies: ["Go", "HTTP", "MySQL", "Distributed Systems"],
+    link: "https://github.com/Abdo-Hafez-0/distributed-database-go",
+  },
+  {
+    name: "Graph-Based Toxic Community Detection and Toxicity Propagation Analysis on Reddit Networks",
+    description:
+      "A graph analytics project focused on detecting toxic communities and analyzing toxicity propagation across Reddit networks using graph-based and machine learning techniques.",
+    problemsSolved: [
+      "Detected toxic communities in Reddit networks.",
+      "Analyzed toxicity propagation patterns.",
+      "Applied graph analytics and machine learning techniques.",
+    ],
+    technologies: ["Python", "Graph Analytics", "Machine Learning", "GNNs"],
+    link: "https://github.com/Abdo-Hafez-0/reddit-toxic-network-analysis",
   },
 ] as const;
