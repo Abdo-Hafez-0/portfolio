@@ -18,7 +18,7 @@ export function SectionHeading({
   return (
     <header className="max-w-2xl">
       {eyebrow ? <p className="eyebrow">{eyebrow}</p> : null}
-      <Heading className="mt-4 text-balance text-3xl font-semibold tracking-[-0.04em] text-[var(--color-text-primary)] sm:text-4xl">
+      <Heading className="display mt-4 text-balance text-4xl leading-[0.95] text-[var(--color-text-primary)] sm:text-5xl">
         {heading}
       </Heading>
       {description ? (

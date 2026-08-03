@@ -38,7 +38,7 @@ export function Hero() {
           </p>
           <h1
             id="hero-heading"
-            className="mt-4 max-w-3xl text-balance text-[2.45rem] font-semibold leading-[0.96] tracking-[-0.065em] text-[var(--color-text-primary)] sm:text-[clamp(3.5rem,7vw,5.8rem)]"
+            className="display mt-4 max-w-3xl text-balance text-[3.5rem] leading-[0.96] text-[var(--color-text-primary)] sm:text-[clamp(4.5rem,9vw,7.5rem)]"
           >
             Building reliable systems, one API at a time.
           </h1>
