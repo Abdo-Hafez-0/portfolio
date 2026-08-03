@@ -11,14 +11,13 @@ export const projects: Project[] = [
     name: "TribeUp",
     role: "Backend Developer (Team Project)",
     description:
-      "A social media platform built using ASP.NET Core and Clean Architecture. I was one of the backend developers on the team and was primarily responsible for designing and implementing the posts, comments, likes, personalized feed, and leaderboard systems.",
+      "A social media platform built using ASP.NET Core and Onion Architecture. I was one of the backend developers on the team and was primarily responsible for designing and implementing the posts, comments, likes, personalized feed, and leaderboard systems.",
     problemsSolved: [
       "Designed scalable APIs for social interactions.",
       "Built a personalized feed system with filtering, ranking, and pagination.",
       "Implemented like and engagement logic.",
-      "Developed nested comment management.",
       "Designed leaderboard algorithms based on user engagement.",
-      "Applied Clean Architecture principles to keep the codebase modular and maintainable.",
+      "Applied Onion Architecture principles to keep the codebase modular and maintainable.",
       "Worked with Entity Framework Core and SQL Server for efficient data access.",
     ],
     technologies: [
@@ -26,7 +25,7 @@ export const projects: Project[] = [
       "C#",
       "Entity Framework Core",
       "SQL Server",
-      "Clean Architecture",
+      "Onion Architecture",
       "REST APIs",
       "JWT Authentication",
       "SignalR",

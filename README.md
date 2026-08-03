@@ -1,39 +1,53 @@
-# Abdulrahman Hafez Portfolio
+# Abdulrahman Hafez — Portfolio
 
-Personal portfolio for Abdulrahman Hafez, a Backend .NET Developer. The site is a static-first Next.js application, deployed through Cloudflare Pages.
+A personal portfolio website for **Abdulrahman Hafez**, a Backend .NET Developer. This is a static-first Next.js application with a retro-futuristic digital interface, hosted on **Cloudflare Pages**.
 
-## Stack
+This project was built as an **AI-powered video coding project** — developed collaboratively with an AI coding agent (using **DeepSeek-V4-Flash**) through the Cline development workflow.
 
-- Next.js (App Router) and React
-- TypeScript
-- Tailwind CSS
-- Cloudflare Pages static export
+## Tech Stack
 
-## Remote-first development
+- **Next.js** (App Router) — framework
+- **React** — UI library
+- **TypeScript** — typed development
+- **Tailwind CSS** — styling
+- **VT323** — dot-matrix display font (via `next/font`)
 
-This project intentionally supports a constrained local environment. Dependencies are declared in `package.json` but may be installed and built by Cloudflare Pages or GitHub Actions instead of locally.
+## Hosting Platform
 
-Local verification, when storage is available:
+**Cloudflare Pages** handles building and hosting:
+
+- Deploys automatically from the `main` branch to production
+- Creates preview deployments for every pull request
+- Serves a fully static export (`out` directory) for fast, inexpensive hosting
+
+## Sections
+
+- Hero
+- About
+- Projects
+- Timeline
+- Skills
+- Contact
+
+## Local Development
 
 ```bash
 npm install
+npm run dev
+```
+
+Build and verify:
+
+```bash
 npm run check
 ```
 
-## Cloudflare Pages
+## AI-Assisted Development
 
-Connect this GitHub repository in **Workers & Pages** and use:
+This project was created with the assistance of an AI coding agent powered by **DeepSeek-V4-Flash**, operating in the "video coding" workflow. The AI agent handled implementation details while following the design and content specifications defined in the project documentation.
 
-- Framework preset: `Next.js (Static HTML Export)`
-- Production branch: `main`
-- Build command: `npx next build`
-- Build output directory: `out`
-- Node version: `22`
+## Documentation
 
-Cloudflare Pages creates a preview deployment for pull requests and deploys `main` to production.
-
-## Working agreement
-
-Each feature follows: discuss → decide → implement → review → refactor if needed → commit.
-
-Architecture and deployment decisions are recorded in [docs/architecture.md](docs/architecture.md).
+- Design guidance: `DESIGN.md`
+- Portfolio content: `PORTFOLIO_CONTENT.md`
+- Architecture and deployment decisions: `docs/architecture.md`

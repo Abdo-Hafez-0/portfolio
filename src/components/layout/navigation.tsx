@@ -10,7 +10,7 @@ const links = [
 
 export function Navigation() {
   return (
-    <header className="sticky top-0 z-50 border-b bg-[var(--color-background)]/85 backdrop-blur-sm">
+    <header className="fixed inset-x-0 top-0 z-50 border-b bg-[var(--color-background)]/85 backdrop-blur-sm">
       <nav
         aria-label="Primary"
         className="mx-auto flex w-full max-w-6xl items-center justify-between px-6 py-4 sm:px-8 lg:px-10"

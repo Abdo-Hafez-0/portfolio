@@ -28,6 +28,7 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       "SQL Server",
       "MySQL",
+      "MongoDB",
       "Database Design",
       "Query Optimization",
       "Stored Procedures",

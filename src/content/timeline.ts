@@ -7,7 +7,7 @@ export type TimelineEntry = {
 
 export const timeline: TimelineEntry[] = [
   {
-    period: "2020 — 2024",
+    period: "2022 — 2026",
     title: "B.Sc. Computer Science",
     subtitle: "Assiut University — Information Systems",
     description:
@@ -18,7 +18,7 @@ export const timeline: TimelineEntry[] = [
     title: "TribeUp",
     subtitle: "Backend Developer (Team Project)",
     description:
-      "Designed and implemented the posts, comments, likes, personalized feed, and leaderboard systems for a social media platform using ASP.NET Core and Clean Architecture.",
+      "Designed and implemented the posts, comments, likes, personalized feed, and leaderboard systems for a social media platform using ASP.NET Core and Onion Architecture.",
   },
   {
     period: "Academic Project",

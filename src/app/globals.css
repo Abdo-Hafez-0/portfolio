@@ -46,6 +46,10 @@ footer {
   z-index: 1;
 }
 
+section[id] {
+  scroll-margin-top: 4.5rem;
+}
+
 ::selection {
   background: var(--color-accent-soft);
   color: var(--color-text-primary);

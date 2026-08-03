@@ -5,7 +5,7 @@ export const profile = {
     "I design scalable backend systems and build reliable APIs that solve real-world problems.",
   email: "abdohafez731@gmail.com",
   links: {
-    github: "https://github.com/abdohafez454",
+    github: "https://github.com/Abdo-Hafez-0",
     linkedin: "https://linkedin.com/in/abdulrahmanhafez",
   },
 } as const;
