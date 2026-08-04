@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { profile } from "@/content/profile";
 import { LinkButton } from "@/components/ui/link-button";
 
@@ -103,11 +105,19 @@ export function Hero() {
                 <span>01 / 01</span>
               </div>
 
-              <div>
-                <p className="font-mono text-xs tracking-[0.12em] text-[var(--color-accent)] uppercase">
-                  Portrait pending
-                </p>
-                <p className="mt-3 max-w-52 text-xl font-medium tracking-[-0.035em] text-[var(--color-text-primary)] sm:text-2xl">
+              <div className="flex flex-col items-center gap-4">
+                <div className="relative">
+                  <div className="absolute -inset-1 rounded-full bg-[var(--color-accent)] opacity-25 blur-md" />
+                  <Image
+                    src="/profile-picture.png"
+                    alt={`Portrait of ${profile.name}`}
+                    width={160}
+                    height={160}
+                    priority
+                    className="relative size-28 rounded-full border border-[var(--color-accent)] object-cover sm:size-32"
+                  />
+                </div>
+                <p className="max-w-52 text-center text-xl font-medium tracking-[-0.035em] text-[var(--color-text-primary)] sm:text-2xl">
                   {profile.name}
                 </p>
               </div>
