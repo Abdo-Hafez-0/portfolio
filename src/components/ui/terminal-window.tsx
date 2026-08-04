@@ -48,7 +48,7 @@ function RevealBlock({ label, block, started, children }: RevealBlockProps) {
   return (
     <section
       className={`lazy-reveal ${started ? "is-visible" : ""}`}
-      style={{ animationDelay: `${block * 180}ms` }}
+      style={{ animationDelay: `${block * 100}ms` }}
     >
       <h4 className="font-mono text-xs tracking-[0.12em] text-[var(--color-accent)] uppercase">
         <span aria-hidden="true">{"> "}</span>
@@ -116,15 +116,15 @@ export function ProjectTerminal({
       timers.current.push(
         window.setTimeout(
           () => setTypedCommand(command.slice(0, 1 + offset)),
-          offset * 32
+          offset * 18
         )
       );
     }
     timers.current.push(
-      window.setTimeout(() => setPhase("loading"), command.length * 36)
+      window.setTimeout(() => setPhase("loading"), command.length * 22)
     );
     timers.current.push(
-      window.setTimeout(() => setPhase("revealed"), command.length * 36 + 1500)
+      window.setTimeout(() => setPhase("revealed"), command.length * 22 + 450)
     );
 
     return () => {
@@ -134,7 +134,7 @@ export function ProjectTerminal({
   }, [started, project.slug]);
 
   const revealDelay = (block: number) => ({
-    animationDelay: `${block * 180}ms`,
+    animationDelay: `${block * 100}ms`,
   });
 
   return (

@@ -134,7 +134,7 @@ section[id] {
 /* Banner left-to-right scan reveal */
 .banner-scan {
   opacity: 0;
-  animation: banner-scan 900ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation: banner-scan 450ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 @keyframes banner-scan {
