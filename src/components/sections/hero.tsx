@@ -105,19 +105,18 @@ export function Hero() {
                 <span>01 / 01</span>
               </div>
 
-              <div className="flex flex-col items-center gap-4">
-                <div className="relative">
-                  <div className="absolute -inset-1 rounded-full bg-[var(--color-accent)] opacity-25 blur-md" />
-                  <Image
-                    src="/profile-picture.png"
-                    alt={`Portrait of ${profile.name}`}
-                    width={160}
-                    height={160}
-                    priority
-                    className="relative size-28 rounded-full border border-[var(--color-accent)] object-cover sm:size-32"
-                  />
-                </div>
-                <p className="max-w-52 text-center text-xl font-medium tracking-[-0.035em] text-[var(--color-text-primary)] sm:text-2xl">
+              <div className="relative flex-1 overflow-hidden">
+                <div className="absolute -inset-px bg-[var(--color-accent)] opacity-20 blur-2xl" />
+                <Image
+                  src="/profile-picture.png"
+                  alt={`Portrait of ${profile.name}`}
+                  width={480}
+                  height={600}
+                  priority
+                  className="relative h-full w-full object-cover"
+                />
+                <div className="absolute inset-x-0 bottom-0 h-2/5 bg-gradient-to-t from-[var(--color-background)]/90 to-transparent" />
+                <p className="absolute bottom-4 left-4 right-4 text-xl font-medium tracking-[-0.035em] text-[var(--color-text-primary)] sm:text-2xl">
                   {profile.name}
                 </p>
               </div>
