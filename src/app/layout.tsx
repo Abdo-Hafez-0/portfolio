@@ -23,14 +23,18 @@ const vt323 = VT323({
   subsets: ["latin"],
 });
 
+const SITE_URL = "https://abdulrahmanhafez.dev";
+const TITLE = "Abdulrahman Hafez | Backend .NET Developer";
+const DESCRIPTION =
+  "Backend .NET Developer building scalable APIs and data-driven systems with ASP.NET Core, SQL Server, and Clean Architecture.";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://abdulrahmanhafez.dev"),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: "Abdulrahman Hafez | Backend .NET Developer",
+    default: TITLE,
     template: "%s | Abdulrahman Hafez",
   },
-  description:
-    "Backend .NET Developer building scalable APIs and data-driven systems with ASP.NET Core, SQL Server, and Clean Architecture.",
+  description: DESCRIPTION,
   keywords: [
     "Backend Developer",
     ".NET Developer",
@@ -43,20 +47,30 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Abdulrahman Hafez" }],
   creator: "Abdulrahman Hafez",
+  alternates: {
+    canonical: SITE_URL,
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://abdulrahmanhafez.dev",
+    url: SITE_URL,
     siteName: "Abdulrahman Hafez",
-    title: "Abdulrahman Hafez | Backend .NET Developer",
-    description:
-      "Backend .NET Developer building scalable APIs and data-driven systems with ASP.NET Core, SQL Server, and Clean Architecture.",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1200,
+        height: 630,
+        alt: "Abdulrahman Hafez — Backend .NET Developer",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "Abdulrahman Hafez | Backend .NET Developer",
-    description:
-      "Backend .NET Developer building scalable APIs and data-driven systems.",
+    card: "summary_large_image",
+    title: TITLE,
+    description: DESCRIPTION,
+    images: [`${SITE_URL}/og-image.png`],
   },
   robots: {
     index: true,
