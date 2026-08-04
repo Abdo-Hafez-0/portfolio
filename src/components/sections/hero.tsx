@@ -29,7 +29,7 @@ export function Hero() {
       className="relative flex min-h-[calc(100svh-1px)] items-center overflow-hidden border-b"
     >
       <div className="mx-auto grid w-full max-w-6xl gap-14 px-6 py-24 sm:px-8 sm:py-28 lg:grid-cols-[minmax(0,1.15fr)_minmax(21rem,0.85fr)] lg:items-center lg:gap-20 lg:px-10">
-        <div className="max-w-3xl">
+        <div className="order-2 max-w-3xl lg:order-1">
           <p className="eyebrow flex items-center gap-2">
             <span className="size-1.5 rounded-full bg-[var(--color-accent)] shadow-[0_0_12px_var(--color-accent)]" />
             Available for opportunities
@@ -96,7 +96,7 @@ export function Hero() {
           </nav>
         </div>
 
-        <aside className="relative mx-auto w-full max-w-md lg:ml-auto">
+        <aside className="order-1 relative mx-auto w-full max-w-md lg:order-2 lg:ml-auto">
           <div className="absolute -inset-px bg-[var(--color-accent)] opacity-20 blur-2xl" />
           <div className="relative aspect-[4/5] border bg-[var(--color-background-elevated)] p-6 sm:p-8">
             <div className="flex h-full flex-col justify-between border border-dashed p-5 sm:p-6">
