@@ -84,8 +84,65 @@ section[id] {
   letter-spacing: 0.01em;
 }
 
+/* ---------- Terminal window ---------- */
+
+.terminal-cursor {
+  display: inline-block;
+  width: 0.6em;
+  height: 1.05em;
+  margin-left: 0.15em;
+  vertical-align: text-bottom;
+  background: var(--color-accent);
+  animation: terminal-blink 1.05s steps(2, start) infinite;
+}
+
+@keyframes terminal-blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+.terminal-reveal {
+  opacity: 0;
+  animation: terminal-reveal 520ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+@keyframes terminal-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.banner-scale {
+  font-family: var(--font-geist-mono), monospace;
+  white-space: pre;
+  transform-origin: left center;
+}
+
+@media (max-width: 640px) {
+  .banner-scale {
+    transform: scale(0.72);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .terminal-cursor {
+    animation: none;
+    visibility: hidden;
+  }
+
+  .terminal-reveal {
+    animation: none;
+    opacity: 1;
+    transform: none;
   }
 }
