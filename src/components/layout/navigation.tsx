@@ -24,8 +24,8 @@ export function Navigation() {
           <Image
             src="/Logo.png"
             alt=""
-            width={28}
-            height={28}
+            width={45}
+            height={45}
             className="size-7 object-contain"
           />
           {profile.name}
