@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { profile } from "@/content/profile";
 
 const links = [
@@ -17,8 +19,15 @@ export function Navigation() {
       >
         <a
           href="#top"
-          className="font-mono text-sm font-medium tracking-[0.12em] text-[var(--color-text-primary)] uppercase transition-colors hover:text-[var(--color-accent)]"
+          className="flex items-center gap-2.5 font-mono text-sm font-medium tracking-[0.12em] text-[var(--color-text-primary)] uppercase transition-colors hover:text-[var(--color-accent)]"
         >
+          <Image
+            src="/Logo.png"
+            alt=""
+            width={28}
+            height={28}
+            className="size-7 object-contain"
+          />
           {profile.name}
         </a>
 
