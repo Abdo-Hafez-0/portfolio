@@ -23,7 +23,7 @@ const vt323 = VT323({
   subsets: ["latin"],
 });
 
-const SITE_URL = "https://abdulrahmanhafez.dev";
+const SITE_URL = "https://abdohafez.pages.dev";
 const TITLE = "Abdulrahman Hafez | Backend .NET Developer";
 const DESCRIPTION =
   "Backend .NET Developer building scalable APIs and data-driven systems with ASP.NET Core, SQL Server, and Clean Architecture.";
