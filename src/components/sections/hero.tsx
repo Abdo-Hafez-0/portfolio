@@ -61,7 +61,7 @@ export function Hero() {
             <span className="flex items-center gap-2">
               <span className="rec-dot" /> Rec · sys online
             </span>
-            <span className="hidden sm:inline">27.18°N 31.18°E · Assiut</span>
+            <span className="hidden sm:inline">29.94°N 30.91°E · 6th of October City</span>
             <UtcClock />
           </div>
 
