@@ -4,6 +4,7 @@ import { Geist, Geist_Mono, VT323 } from "next/font/google";
 import { ParticleField } from "@/components/effects/particle-field";
 import { Navigation } from "@/components/layout/navigation";
 import { Footer } from "@/components/layout/footer";
+import { themeInitScript } from "@/lib/theme";
 
 import "./globals.css";
 
@@ -87,7 +88,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${vt323.variable} h-full antialiased`}
+      data-theme="dark"
+      suppressHydrationWarning
     >
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body className="min-h-full flex flex-col">
         <ParticleField />
         <Navigation />

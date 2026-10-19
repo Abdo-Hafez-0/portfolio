@@ -3,9 +3,19 @@ export type TimelineEntry = {
   title: string;
   subtitle?: string;
   description: string;
+  /** Marks the live, present-day entry. */
+  current?: boolean;
 };
 
 export const timeline: TimelineEntry[] = [
+  {
+    period: "2026 — Now",
+    title: "Launch window open",
+    subtitle: "Backend .NET Developer",
+    description:
+      "Looking for backend engineering roles where I can design and ship reliable APIs with ASP.NET Core and SQL Server.",
+    current: true,
+  },
   {
     period: "2022 — 2026",
     title: "B.Sc. Computer Science",

@@ -13,9 +13,9 @@ const STATUS_STYLES: Record<Project["status"], string> = {
 };
 
 const CIRCLES = [
-  "bg-[#2a2e35]",
-  "bg-[#3a424d]",
-  "bg-[var(--color-accent-soft)]",
+  "bg-[var(--color-border-subtle)]",
+  "bg-[var(--color-text-muted)]",
+  "bg-[var(--color-accent)]",
 ];
 
 function ArrowUpRight() {

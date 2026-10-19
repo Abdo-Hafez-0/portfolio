@@ -6,8 +6,11 @@ export function Timeline() {
   return (
     <Section id="timeline" aria-labelledby="timeline-heading">
       <SectionHeading
-        eyebrow="03 / Timeline"
-        heading="Education and project history."
+        index="03"
+        label="Flight path"
+        meta="T+ 2022 → 2026"
+        id="timeline-heading"
+        heading="The trajectory so far."
         description="A chronological record of my academic background and the systems I've built."
       />
 
@@ -19,11 +22,23 @@ export function Timeline() {
           >
             <span
               aria-hidden="true"
-              className="absolute top-1.5 -left-[5px] size-2.5 bg-[var(--color-accent)] shadow-[0_0_10px_var(--color-accent)]"
+              className={[
+                "absolute top-1.5 -left-[5px] size-2.5 border",
+                entry.current
+                  ? "border-[var(--color-accent)] bg-[var(--color-accent)]"
+                  : "border-[var(--color-border-strong)] bg-[var(--color-background)]",
+              ].join(" ")}
             />
 
             <div>
-              <p className="font-mono text-xs tracking-[0.12em] text-[var(--color-accent)] uppercase">
+              <p
+                className={[
+                  "font-mono text-xs tracking-[0.12em] uppercase",
+                  entry.current
+                    ? "text-[var(--color-accent)]"
+                    : "text-[var(--color-text-primary)]",
+                ].join(" ")}
+              >
                 {entry.period}
               </p>
               {entry.subtitle ? (

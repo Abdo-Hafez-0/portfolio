@@ -5,7 +5,7 @@ export function Footer() {
     <footer className="border-t">
       <div className="mx-auto flex w-full max-w-6xl flex-col gap-4 px-6 py-10 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
         <p className="font-mono text-xs tracking-[0.1em] text-[var(--color-text-muted)] uppercase">
-          © {new Date().getFullYear()} {profile.name}
+          — End of transmission — © {new Date().getFullYear()} {profile.name}
         </p>
 
         <nav aria-label="Footer" className="flex gap-5">

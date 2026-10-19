@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import type { KeyboardEvent } from "react";
 
 import { projects, universityProjects } from "@/content/projects";
 import { Section } from "@/components/ui/section";
@@ -16,13 +17,26 @@ const tabs: { id: Tab; label: string }[] = [
 
 export function Projects() {
   const [activeTab, setActiveTab] = useState<Tab>("featured");
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const visibleProjects =
     activeTab === "featured" ? projects : universityProjects;
+
+  const handleTabKeyDown = (event: KeyboardEvent, index: number) => {
+    if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+    event.preventDefault();
+    const step = event.key === "ArrowRight" ? 1 : -1;
+    const next = (index + step + tabs.length) % tabs.length;
+    setActiveTab(tabs[next].id);
+    tabRefs.current[next]?.focus();
+  };
 
   return (
     <Section id="projects" aria-labelledby="projects-heading">
       <SectionHeading
-        eyebrow="02 / Projects"
+        index="02"
+        label="Mission logs"
+        meta={`${visibleProjects.length} records`}
+        id="projects-heading"
         heading="Systems I've designed and built."
         description="A selection of projects where I focused on backend architecture, scalable APIs, and reliable data access."
       />
@@ -32,10 +46,16 @@ export function Projects() {
         aria-label="Project categories"
         className="mt-14 flex gap-2 border-b border-[var(--color-border-subtle)]"
       >
-        {tabs.map((tab) => (
+        {tabs.map((tab, index) => (
           <button
             key={tab.id}
+            ref={(element) => {
+              tabRefs.current[index] = element;
+            }}
+            type="button"
             role="tab"
+            tabIndex={activeTab === tab.id ? 0 : -1}
+            onKeyDown={(event) => handleTabKeyDown(event, index)}
             id={`tab-${tab.id}`}
             aria-selected={activeTab === tab.id}
             aria-controls={`panel-${tab.id}`}

@@ -30,6 +30,14 @@ export function ParticleField() {
     let height = 0;
     let parallaxX = 0;
     let parallaxY = 0;
+    let particleRgb = "255, 255, 255";
+
+    const readParticleColor = () => {
+      const value = getComputedStyle(document.documentElement)
+        .getPropertyValue("--particle-rgb")
+        .trim();
+      if (value) particleRgb = value;
+    };
 
     const draw = () => {
       context.clearRect(0, 0, width, height);
@@ -38,7 +46,7 @@ export function ParticleField() {
 
       for (const particle of particles) {
         context.beginPath();
-        context.fillStyle = `rgba(164, 225, 255, ${particle.opacity})`;
+        context.fillStyle = `rgba(${particleRgb}, ${particle.opacity})`;
         context.arc(particle.x, particle.y, particle.radius, 0, Math.PI * 2);
         context.fill();
       }
@@ -94,6 +102,16 @@ export function ParticleField() {
       if (!reduceMotion.matches) animationFrame = window.requestAnimationFrame(animate);
     };
 
+    const themeObserver = new MutationObserver(() => {
+      readParticleColor();
+      draw();
+    });
+    themeObserver.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["data-theme"],
+    });
+
+    readParticleColor();
     resize();
     if (!reduceMotion.matches) animationFrame = window.requestAnimationFrame(animate);
 
@@ -102,6 +120,7 @@ export function ParticleField() {
     reduceMotion.addEventListener("change", handleMotionPreference);
 
     return () => {
+      themeObserver.disconnect();
       window.cancelAnimationFrame(animationFrame);
       window.removeEventListener("resize", resize);
       window.removeEventListener("pointermove", handlePointerMove);
