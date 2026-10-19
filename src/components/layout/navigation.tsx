@@ -38,17 +38,11 @@ export function Navigation() {
           <Image
             src="/Logo.png"
             alt=""
-            width={42}
+            width={28}
             height={28}
-            className="size-7 object-contain"
+            className="size-7 rounded-full"
           />
-          <span>
-            A.Hafez
-            <span className="hidden text-[var(--color-text-muted)] xl:inline">
-              {" "}
-              {"//"} mission control
-            </span>
-          </span>
+          A.Hafez
         </a>
 
         <ul className="hidden items-center gap-5 md:flex lg:gap-6">

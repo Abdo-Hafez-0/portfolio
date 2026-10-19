@@ -36,6 +36,13 @@ const stats = [
   { label: "Class of", value: "2026" },
 ];
 
+const RANGE_TICKS = [
+  "top-[30%] left-0 h-px w-3",
+  "top-[30%] right-0 h-px w-3",
+  "top-0 left-1/2 h-3 w-px",
+  "bottom-0 left-1/2 h-3 w-px",
+];
+
 export function Hero() {
   return (
     <section
@@ -60,11 +67,8 @@ export function Hero() {
 
           <div className="mt-10 grid gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(18rem,0.75fr)] lg:items-center lg:gap-16">
             <div className="order-2 lg:order-1">
-              <p className="flex flex-wrap items-center gap-3 font-mono text-xs tracking-[0.1em] text-[var(--color-text-muted)] uppercase">
+              <p className="font-mono text-xs tracking-[0.1em] text-[var(--color-text-muted)] uppercase">
                 {profile.role}
-                <span className="bg-[var(--color-accent-soft)] px-2 py-0.5 text-[var(--color-accent)]">
-                  Available for missions
-                </span>
               </p>
 
               <h1
@@ -134,18 +138,14 @@ export function Hero() {
                     priority
                     className="h-full w-full object-cover grayscale"
                   />
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-y-0 left-1/2 border-l border-[var(--color-accent)]/40"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="absolute inset-x-0 top-[30%] border-t border-[var(--color-accent)]/40"
-                  />
-                  <span
-                    aria-hidden="true"
-                    className="absolute top-[30%] left-1/2 size-16 -translate-x-1/2 -translate-y-1/2 border border-[var(--color-accent)]"
-                  />
+                  {/* Range ticks on the frame edges, aligned to the face */}
+                  {RANGE_TICKS.map((position) => (
+                    <span
+                      key={position}
+                      aria-hidden="true"
+                      className={`absolute bg-[var(--color-accent)] ${position}`}
+                    />
+                  ))}
                 </div>
 
                 <div className="mt-3 flex items-center justify-between font-mono text-[0.625rem] tracking-[0.14em] text-[var(--color-text-muted)] uppercase">
