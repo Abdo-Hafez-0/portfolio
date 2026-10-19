@@ -62,8 +62,9 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+/* The site header sets its own sticky positioning; an unlayered
+   position rule here would override Tailwind's `sticky` utility. */
 main,
-header,
 footer {
   position: relative;
   z-index: 1;
