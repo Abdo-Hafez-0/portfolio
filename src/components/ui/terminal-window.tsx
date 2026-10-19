@@ -92,7 +92,7 @@ export function ProjectTerminal({
           observer.disconnect();
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.1 }
     );
     observer.observe(card);
     return () => observer.disconnect();
@@ -102,7 +102,7 @@ export function ProjectTerminal({
     if (!started) return;
 
     if (reducedMotion.current) {
-      setTypedCommand(`$ open ${project.slug}`);
+      setTypedCommand(`open ${project.slug}`);
       setPhase("revealed");
       return;
     }
@@ -110,7 +110,7 @@ export function ProjectTerminal({
     setTypedCommand("");
     setPhase("typing");
 
-    const command = `$ open ${project.slug}`;
+    const command = `open ${project.slug}`;
     for (let i = 0; i < command.length; i++) {
       const offset = i;
       timers.current.push(
@@ -137,6 +137,11 @@ export function ProjectTerminal({
     animationDelay: `${block * 100}ms`,
   });
 
+  // Scale the ASCII banner so its widest line always fits the column.
+  // Geist Mono glyphs advance 0.6em, so N columns need N * 0.6em of width.
+  const bannerColumns = Math.max(...project.banner.map((line) => line.length));
+  const bannerFontSize = `min(0.75rem, calc(100cqi / ${(bannerColumns * 0.6).toFixed(1)}))`;
+
   return (
     <article
       ref={cardRef}
@@ -145,7 +150,7 @@ export function ProjectTerminal({
       }`}
     >
       {/* Terminal title bar */}
-      <header className="flex items-center justify-between gap-4 overflow-hidden border-b border-dashed px-6 py-3.5 font-mono text-[0.625rem] tracking-[0.14em] text-[var(--color-text-muted)] uppercase sm:px-8">
+      <header className="flex items-center justify-between gap-4 overflow-hidden border-b border-dashed px-4 py-3.5 font-mono text-[0.625rem] tracking-[0.14em] text-[var(--color-text-muted)] uppercase sm:px-8">
         <span className="flex min-w-0 items-center gap-4">
           <span className="flex shrink-0 items-center gap-1.5">
             {CIRCLES.map((color) => (
@@ -168,7 +173,7 @@ export function ProjectTerminal({
       </header>
 
       {/* Terminal body */}
-      <div className="px-6 py-6 sm:px-8 sm:py-8">
+      <div className="px-4 py-5 sm:px-8 sm:py-8">
         {/* Real project heading for semantics */}
         <h3 className="sr-only">{project.name}</h3>
 
@@ -177,7 +182,7 @@ export function ProjectTerminal({
           <p className="text-[var(--color-text-primary)]">
             <span className="text-[var(--color-accent)]">$</span>{" "}
             <span className="text-[var(--color-text-primary)]">
-              {typedCommand || "$"}
+              {typedCommand}
             </span>
             {phase !== "revealed" ? <span className="terminal-cursor" /> : null}
           </p>
@@ -190,17 +195,20 @@ export function ProjectTerminal({
         </div>
 
         {/* Two-column layout */}
-        <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,0.4fr)_minmax(0,0.6fr)] lg:gap-12">
+        <div className="mt-8 grid grid-cols-[minmax(0,1fr)] gap-10 lg:grid-cols-[minmax(0,0.4fr)_minmax(0,0.6fr)] lg:gap-12">
           {/* Left column */}
           <div className="flex flex-col">
             {/* ASCII banner (decorative) */}
             {phase === "revealed" ? (
               <div
                 aria-hidden="true"
-                className="banner-scan overflow-hidden"
+                className="banner-scan overflow-hidden [container-type:inline-size]"
                 style={revealDelay(0)}
               >
-                <pre className="banner-gradient font-mono text-[0.625rem] leading-[1.2] sm:text-[0.75rem]">
+                <pre
+                  className="banner-gradient font-mono leading-[1.2]"
+                  style={{ fontSize: bannerFontSize }}
+                >
                   {project.banner.join("\n")}
                 </pre>
               </div>
@@ -272,7 +280,7 @@ export function ProjectTerminal({
             </RevealBlock>
 
             {/* SYSTEMS + PROBLEMS two-column */}
-            <div className="mt-7 grid gap-8 sm:grid-cols-2">
+            <div className="mt-7 grid grid-cols-[minmax(0,1fr)] gap-8 sm:grid-cols-2">
               {project.systemsImplemented ? (
                 <RevealBlock
                   label="SYSTEMS IMPLEMENTED"
