@@ -33,7 +33,7 @@ export function Navigation() {
       >
         <a
           href="#top"
-          className="flex items-center gap-2.5 font-mono text-sm font-medium tracking-[0.12em] text-[var(--color-text-primary)] uppercase transition-colors hover:text-[var(--color-accent)]"
+          className="flex shrink-0 items-center gap-2.5 font-mono text-sm font-medium whitespace-nowrap tracking-[0.12em] text-[var(--color-text-primary)] uppercase transition-colors hover:text-[var(--color-accent)]"
         >
           <Image
             src="/Logo.png"
@@ -44,18 +44,18 @@ export function Navigation() {
           />
           <span>
             A.Hafez
-            <span className="hidden text-[var(--color-text-muted)] lg:inline">
+            <span className="hidden text-[var(--color-text-muted)] xl:inline">
               {" "}
               {"//"} mission control
             </span>
           </span>
         </a>
 
-        <ul className="hidden items-center gap-6 md:flex">
+        <ul className="hidden items-center gap-5 md:flex lg:gap-6">
           {links.map((link, index) => (
             <li key={link.href}>
               <a
-                className="font-mono text-xs tracking-[0.1em] text-[var(--color-text-secondary)] uppercase transition-colors hover:text-[var(--color-accent)]"
+                className="font-mono text-xs tracking-[0.1em] whitespace-nowrap text-[var(--color-text-secondary)] uppercase transition-colors hover:text-[var(--color-accent)]"
                 href={link.href}
               >
                 <span className="text-[var(--color-text-muted)]">

@@ -59,9 +59,6 @@ body {
     var(--color-background);
   background-size: 48px 48px;
   color: var(--color-text-primary);
-  transition:
-    background-color 300ms ease,
-    color 300ms ease;
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
@@ -228,9 +225,5 @@ section[id] {
   .rec-dot,
   .signal-cursor {
     animation: none;
-  }
-
-  body {
-    transition: none;
   }
 }
