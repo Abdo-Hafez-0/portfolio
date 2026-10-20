@@ -75,8 +75,15 @@ export function Hero() {
                 id="hero-heading"
                 className="display mt-5 text-[4.5rem] leading-[0.85] text-[var(--color-text-primary)] sm:text-[clamp(6rem,12vw,9.5rem)]"
               >
-                <span aria-hidden="true">
-                  A. HAFEZ<span className="signal-cursor">_</span>
+                {/* VT323 glyphs advance 0.4em, so HAFEZ is 2em wide; the first
+                    name is sized and tracked to span the same width. */}
+                <span aria-hidden="true" className="block">
+                  <span className="block text-[0.26em] leading-none tracking-[0.33em]">
+                    ABDULRAHMAN
+                  </span>
+                  <span className="mt-[0.06em] block">
+                    HAFEZ<span className="signal-cursor">_</span>
+                  </span>
                 </span>
                 <span className="sr-only">
                   {profile.name}, {profile.role}
